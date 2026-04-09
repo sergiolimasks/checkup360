@@ -1,0 +1,37 @@
+# Cache static assets
+<FilesMatch "\.(png|jpg|jpeg|gif|svg|ico|webp|avif)$">
+  Header set Cache-Control "public, max-age=2592000"
+</FilesMatch>
+
+<FilesMatch "\.(js|css)$">
+  Header set Cache-Control "no-cache, must-revalidate"
+  Header set Pragma "no-cache"
+</FilesMatch>
+
+# Security headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Custom 404
+ErrorDocument 404 /404.html
+
+# Redirect www to non-www
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.checkup360\.online$ [NC]
+RewriteRule ^(.*)$ https://checkup360.online/$1 [R=301,L]
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# CSP - libera CDNs, Meta Pixel, Google Analytics, API
+<IfModule mod_headers.c>
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://connect.facebook.net https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.checkup360.online https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.google.com https://www.facebook.com; img-src 'self' data: https://www.facebook.com https://www.google-analytics.com https://www.google.com https://www.google.com.br https://stats.g.doubleclick.net; frame-ancestors 'none'"
+</IfModule>
+
+# Favicon redirect
+RewriteRule ^favicon\.ico$ /logo-icon.png [L]

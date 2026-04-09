@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Environment (real credentials)
+.env
+backend/.env
+rpa-service/.env
+rag-service/.env
+
+# Build
+backend/dist/
+*.js.map
+*.d.ts
+*.d.ts.map
+
+# OS
+.DS_Store
+*.pem
+
+# Logs
+*.log
+npm-debug.log*
+
+# Screenshots (local reference)
+/screenshots/
+
+# Docker volumes
+cc360_pgdata/
+cc360_redis/
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+*.bak
+*.bak.*

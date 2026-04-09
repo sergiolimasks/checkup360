@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3390:3001"
+    volumes:
+      - uptime_kuma_data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"const h=require('http');const o={hostname:'localhost',port:3001,path:'/api/entry-page',timeout:2000};const r=h.request(o,res=>{process.exit(res.statusCode===200?0:1)});r.on('error',()=>process.exit(1));r.end()\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  uptime_kuma_data:
+    name: uptime_kuma_data

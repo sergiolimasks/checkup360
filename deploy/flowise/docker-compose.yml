@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  flowise:
+    image: flowiseai/flowise:latest
+    container_name: flowise
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3100:3000"
+    volumes:
+      - flowise_data:/root/.flowise
+    environment:
+      - FLOWISE_USERNAME=admin
+      - FLOWISE_PASSWORD=${FLOWISE_PASSWORD}
+      - DATABASE_TYPE=postgres
+      - DATABASE_HOST=172.17.0.1
+      - DATABASE_PORT=5432
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_NAME=flowise
+      - APIKEY_PATH=/root/.flowise
+      - SECRETKEY_PATH=/root/.flowise
+      - LOG_LEVEL=info
+      - CORS_ORIGINS=https://checkup360.online,https://admin.checkup360.online
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  flowise_data:
+    name: flowise_data

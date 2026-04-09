@@ -1,0 +1,49 @@
+# /etc/fail2ban/jail.local
+# Configuracao Fail2ban para Checkup360 VPS
+
+[DEFAULT]
+bantime  = 1h
+findtime = 10m
+maxretry = 5
+banaction = iptables-multiport
+ignoreip = 127.0.0.1/8 ::1
+
+# Descomentar para receber email de bans:
+# destemail = sergio@checkup360.online
+# action = %(action_mwl)s
+
+[sshd]
+enabled  = true
+port     = ssh
+filter   = sshd
+logpath  = /var/log/auth.log
+maxretry = 3
+bantime  = 24h
+findtime = 10m
+
+# Proteger Nginx (brute force em auth)
+[nginx-http-auth]
+enabled  = true
+port     = http,https
+filter   = nginx-http-auth
+logpath  = /var/log/nginx/error.log
+maxretry = 5
+bantime  = 1h
+
+# Proteger contra scans de porta excessivos
+[portscan]
+enabled  = true
+filter   = portscan
+logpath  = /var/log/syslog
+maxretry = 3
+bantime  = 24h
+findtime = 60
+
+# Proteger API contra brute force
+[nginx-botsearch]
+enabled  = true
+port     = http,https
+filter   = nginx-botsearch
+logpath  = /var/log/nginx/api_access.log
+maxretry = 10
+bantime  = 1h
