@@ -35,7 +35,7 @@ const MAX_CONCURRENT = 1; // Apenas 1 job por vez (KSI não suporta concorrênci
 
 // Conexão PostgreSQL — schema consulta_credito
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL
+    connectionString: process.env.DATABASE_URL || "postgresql://postgres:wJpDF3KZOVbv90AO@127.0.0.1:5432/postgres?options=-csearch_path%3Dconsulta_credito"
 });
 
 // --- Estado do worker ---

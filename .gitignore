@@ -3,9 +3,16 @@ node_modules/
 
 # Environment (real credentials)
 .env
+.env.local
 backend/.env
+backend/.env.local
 rpa-service/.env
+rpa-service/.env.local
 rag-service/.env
+rag-service/.env.local
+
+# Backups
+*.tar.gz
 
 # Build
 backend/dist/
@@ -31,6 +38,9 @@ cc360_redis/
 # IDE
 .vscode/
 .idea/
+
+# Generated images (large binaries)
+imagens geradas gemini/
 
 # Misc
 *.bak

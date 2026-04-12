@@ -1,0 +1,13 @@
+node_modules/
+dist/*.map
+dist/**/*.map
+logs/
+tmp/
+*.log
+.env
+.env.bak
+package-lock.json
+flow_private.pem
+certs/
+*.pem
+*.key

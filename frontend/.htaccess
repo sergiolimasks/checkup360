@@ -28,9 +28,9 @@ RewriteRule ^(.*)$ https://checkup360.online/$1 [R=301,L]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
-# CSP - libera CDNs, Meta Pixel, Google Analytics, API
+# CSP - libera CDNs, Meta Pixel, Google Analytics, API, ConverteAI/Vturb
 <IfModule mod_headers.c>
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://connect.facebook.net https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.checkup360.online https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.google.com https://www.facebook.com; img-src 'self' data: https://www.facebook.com https://www.google-analytics.com https://www.google.com https://www.google.com.br https://stats.g.doubleclick.net; frame-ancestors 'none'"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://connect.facebook.net https://www.googletagmanager.com https://www.google-analytics.com https://scripts.converteai.net https://cdn.converteai.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.checkup360.online https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.google.com https://www.facebook.com https://cdn.converteai.net https://scripts.converteai.net https://images.converteai.net https://api.vturb.com.br; img-src 'self' data: https://www.facebook.com https://www.google-analytics.com https://www.google.com https://www.google.com.br https://stats.g.doubleclick.net https://images.converteai.net https://cdn.converteai.net https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev; frame-src https://scripts.converteai.net; media-src https://cdn.converteai.net; frame-ancestors 'none'"
 </IfModule>
 
 # Favicon redirect
