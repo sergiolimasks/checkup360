@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <title>Rating Bancário — R$99</title>
+  <meta name="description" content="Descubra como os bancos realmente veem seu CPF. Relatório completo por R$99.">
+  <meta property="og:title" content="Rating Bancário — R$99">
+  <meta property="og:description" content="Seu diagnóstico financeiro completo. PIX ou 12x de R$10,18.">
+  <meta property="og:url" content="https://checkup360.online/direto/">
+  <meta property="og:image" content="https://checkup360.online/logo-og.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '800605166438041');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=800605166438041&ev=PageView&noscript=1"/></noscript>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SE31PS6LFQ"></script>
+  <script>
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());gtag('config','G-SE31PS6LFQ');
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #ffffff;
+      color: #1a1a19;
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+    }
+
+    .page {
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 24px env(safe-area-inset-bottom, 20px);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* === HEADER === */
+    .header {
+      text-align: center;
+      padding-top: 8px;
+    }
+    .header .brand {
+      font-size: 15px;
+      font-weight: 600;
+      color: #059669;
+      letter-spacing: -0.3px;
+    }
+
+    /* === MAIN CONTENT === */
+    .content {
+      text-align: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 4px;
+    }
+
+    .headline {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+    }
+    .headline em {
+      font-style: normal;
+      color: #059669;
+    }
+
+    .price-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .price-old {
+      font-size: 16px;
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
+    .price-main {
+      font-size: 48px;
+      font-weight: 800;
+      color: #059669;
+      line-height: 1;
+    }
+    .price-installment {
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    /* === CTA (thumb zone) === */
+    .cta-area {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-bottom: 12px;
+    }
+
+    .cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 18px 24px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      background: #059669;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      min-height: 60px;
+      box-shadow: 0 4px 20px rgba(5, 150, 105, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .cta-btn:active {
+      transform: scale(0.97);
+      box-shadow: 0 2px 10px rgba(5, 150, 105, 0.25);
+    }
+
+    .trust-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: #64748b;
+      white-space: nowrap;
+    }
+    .trust-item svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    .link-more {
+      text-align: center;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .link-more a {
+      color: #94a3b8;
+      text-decoration: underline;
+    }
+
+    /* === DESKTOP === */
+    @media (min-width: 768px) {
+      .headline { font-size: 36px; }
+      .price-main { font-size: 56px; }
+      .cta-btn { font-size: 20px; padding: 20px 32px; border-radius: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="header">
+      <span class="brand">Rating Bancário</span>
+    </div>
+
+    <div class="content">
+      <h1 class="headline">Seu relatório completo de crédito por <em>R$99</em></h1>
+
+      <div class="price-block">
+        <span class="price-old">R$197</span>
+        <span class="price-main">R$99</span>
+        <span class="price-installment">ou 12x de R$10,18 no cartão</span>
+      </div>
+    </div>
+
+    <div class="cta-area">
+      <a href="https://payfast.greenn.com.br/redirect/277455" target="_blank" class="cta-btn" id="cta-main">
+        Quero meu check-up agora
+      </a>
+
+      <div class="trust-row">
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Pagamento seguro
+        </span>
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Dados protegidos
+        </span>
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          Garantia 7 dias
+        </span>
+      </div>
+
+      <div class="link-more">
+        <a href="/checkupfin/">Quero saber mais sobre o relatório</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+  // Track
+  if(typeof fbq!=='undefined') fbq('track','PageView');
+
+  document.getElementById('cta-main').addEventListener('click', function(){
+    if(typeof fbq!=='undefined') fbq('track','Lead',{content_name:'Direto Mobile'});
+    if(typeof gtag!=='undefined') gtag('event','generate_lead',{currency:'BRL',value:99.00});
+  });
+  </script>
+</body>
+</html>
