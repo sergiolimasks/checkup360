@@ -197,7 +197,7 @@ document.querySelectorAll('.btn-cta').forEach(function(btn) { if (btn.getAttribu
     btn.addEventListener('click', function() {
       MetaPixel.lead();
       GA4.lead();
-      window.location.href = 'https://payfast.greenn.com.br/redirect/277454';
+      window.location.href = typeof _cc360CheckoutUrl === 'function' ? _cc360CheckoutUrl('https://payfast.greenn.com.br/redirect/277454') : 'https://payfast.greenn.com.br/redirect/277454';
     });
   }
 });
@@ -214,6 +214,7 @@ document.querySelectorAll('.faq-item__question').forEach(function(btn) {
   });
 });
 </script>
+<script src="/tracking-passthrough.js"></script>
 
 </body>
 </html>
